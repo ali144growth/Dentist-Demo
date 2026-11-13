@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #EEF2FF;
+    color: #1B2340;
+    min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Remove scroll bar in mobile view while preserving smooth touch scrolling */
+@media (max-width: 768px) {
+  html, body, div, section, main {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    height: 0px !important;
+    background: transparent !important;
+  }
+}
+
+/* Organic blob crop shapes */
+.blob-shape-hero {
+  border-radius: 56% 44% 48% 52% / 52% 42% 58% 48%;
+}
+
+.blob-shape-1 {
+  border-radius: 64% 36% 54% 46% / 46% 62% 38% 54%;
+}
+
+.blob-shape-2 {
+  border-radius: 42% 58% 44% 56% / 58% 38% 62% 42%;
+}
+
+.blob-shape-3 {
+  border-radius: 58% 42% 66% 34% / 38% 54% 46% 62%;
+}
+
+.blob-shape-4 {
+  border-radius: 48% 52% 38% 62% / 64% 42% 58% 36%;
+}
+
+.blob-shape-5 {
+  border-radius: 54% 46% 62% 38% / 44% 64% 36% 56%;
+}
+
+/* Gentle hover micro-interaction */
+.clinical-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clinical-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -8px rgba(62, 99, 221, 0.18);
+}
+
+/* WhatsApp persistent subtle pulse */
+@keyframes whatsapp-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(62, 99, 221, 0.45), 0 4px 14px rgba(62, 99, 221, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(62, 99, 221, 0), 0 6px 20px rgba(62, 99, 221, 0.4);
+  }
+}
+
+.whatsapp-pulse {
+  animation: whatsapp-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glass effect definitions */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.glass-chip {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
